@@ -70,48 +70,55 @@ StringValue41 = Instance.new("StringValue")
 TextButton42 = Instance.new("TextButton")
 StringValue43 = Instance.new("StringValue")
 LocalScript44 = Instance.new("LocalScript")
-Frame45 = Instance.new("Frame")
-TextBox46 = Instance.new("TextBox")
-Frame47 = Instance.new("Frame")
-TextButton48 = Instance.new("TextButton")
-LocalScript49 = Instance.new("LocalScript")
-StringValue50 = Instance.new("StringValue")
-LocalScript51 = Instance.new("LocalScript")
-Part52 = Instance.new("Part")
-LocalScript53 = Instance.new("LocalScript")
+ScreenGui45 = Instance.new("ScreenGui")
+Frame46 = Instance.new("Frame")
+LocalScript47 = Instance.new("LocalScript")
+BillboardGui48 = Instance.new("BillboardGui")
+TextLabel49 = Instance.new("TextLabel")
+LocalScript50 = Instance.new("LocalScript")
+Frame51 = Instance.new("Frame")
+TextBox52 = Instance.new("TextBox")
+Frame53 = Instance.new("Frame")
 TextButton54 = Instance.new("TextButton")
 LocalScript55 = Instance.new("LocalScript")
 StringValue56 = Instance.new("StringValue")
-TextButton57 = Instance.new("TextButton")
-LocalScript58 = Instance.new("LocalScript")
-StringValue59 = Instance.new("StringValue")
+LocalScript57 = Instance.new("LocalScript")
+Part58 = Instance.new("Part")
+LocalScript59 = Instance.new("LocalScript")
 TextButton60 = Instance.new("TextButton")
 LocalScript61 = Instance.new("LocalScript")
 StringValue62 = Instance.new("StringValue")
-Part63 = Instance.new("Part")
-TextButton64 = Instance.new("TextButton")
+TextButton63 = Instance.new("TextButton")
+LocalScript64 = Instance.new("LocalScript")
 StringValue65 = Instance.new("StringValue")
-LocalScript66 = Instance.new("LocalScript")
-Part67 = Instance.new("Part")
-TextButton68 = Instance.new("TextButton")
-StringValue69 = Instance.new("StringValue")
-Part70 = Instance.new("Part")
-LocalScript71 = Instance.new("LocalScript")
+TextButton66 = Instance.new("TextButton")
+LocalScript67 = Instance.new("LocalScript")
+StringValue68 = Instance.new("StringValue")
+Part69 = Instance.new("Part")
+TextButton70 = Instance.new("TextButton")
+StringValue71 = Instance.new("StringValue")
 LocalScript72 = Instance.new("LocalScript")
-TextButton73 = Instance.new("TextButton")
-LocalScript74 = Instance.new("LocalScript")
+Part73 = Instance.new("Part")
+TextButton74 = Instance.new("TextButton")
 StringValue75 = Instance.new("StringValue")
-TextButton76 = Instance.new("TextButton")
+Part76 = Instance.new("Part")
 LocalScript77 = Instance.new("LocalScript")
-StringValue78 = Instance.new("StringValue")
-StringValue79 = Instance.new("StringValue")
-TextButton80 = Instance.new("TextButton")
-LocalScript81 = Instance.new("LocalScript")
-LocalScript82 = Instance.new("LocalScript")
+LocalScript78 = Instance.new("LocalScript")
+TextButton79 = Instance.new("TextButton")
+LocalScript80 = Instance.new("LocalScript")
+StringValue81 = Instance.new("StringValue")
+TextButton82 = Instance.new("TextButton")
 LocalScript83 = Instance.new("LocalScript")
+StringValue84 = Instance.new("StringValue")
+StringValue85 = Instance.new("StringValue")
+TextButton86 = Instance.new("TextButton")
+LocalScript87 = Instance.new("LocalScript")
+LocalScript88 = Instance.new("LocalScript")
+LocalScript89 = Instance.new("LocalScript")
 ScreenGui0.Name = "C00lSkid"
 ScreenGui0.Parent = mas
 ScreenGui0.ResetOnSpawn = false
+ScreenGui0.DisplayOrder = 40
 Frame1.Name = "Main"
 Frame1.Parent = ScreenGui0
 Frame1.Position = UDim2.new(0.0984451547, 0, 0.304339498, 0)
@@ -663,85 +670,142 @@ script.Parent.MouseButton1Click:Connect(function()
 	if script.Parent.Value.Value == "On" then
 		script.Parent.Value.Value = "Off"
 		script.Parent.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-		for i,v in pairs(game:GetService("Players"):GetChildren()) do
-			v.Character.HumanoidRootPart.C00lXray:Remove()
-			v.Character.HumanoidRootPart.Transparency = 1
-		end
+		game:GetService("Players").LocalPlayer.PlayerGui.CoolSkidESP.Enabled = true
+		game:GetService("Players").LocalPlayer.PlayerGui.CoolSkidESP.Loader.Disabled = true
+		game:GetService("Players").LocalPlayer.PlayerGui.CoolSkidESP.ESPUpdater.Disabled = true
+		game:GetService("Players").LocalPlayer.PlayerGui.CoolSkidESP.Parent = script.Parent
+		script.Parent.CoolSkidESP.Frame.ViewportFrame:ClearAllChildren()
+		game:GetService("Workspace").EspNameTags:Remove()
 		
 	else
 		if script.Parent.Value.Value == "Off" then
 			script.Parent.Value.Value = "On"
 			script.Parent.BackgroundColor3 = Color3.new(0.564706, 0, 0)
-			for i,v in pairs(game:GetService("Players"):GetChildren()) do
-				local esp = Instance.new("Highlight")
-				esp.FillColor = Color3.new(1, 1, 1)
-				esp.OutlineColor = Color3.new(1,1,1)
-				esp.FillTransparency = 0.4
-				esp.Adornee = v.Character.HumanoidRootPart
-				esp.OutlineTransparency = 1
-				esp.Name = "C00lXray"
-				esp.Parent = v.Character.HumanoidRootPart
-				v.Character.HumanoidRootPart.Transparency = 0.4
-			end
+			script.Parent.CoolSkidESP.Enabled = true
+			script.Parent.CoolSkidESP.Loader.Disabled = false
+			script.Parent.CoolSkidESP.ESPUpdater.Disabled = false
+			script.Parent.CoolSkidESP.Parent = game.Players.LocalPlayer.PlayerGui
 		end
+		end
+end)
+end))
+ScreenGui45.Name = "CoolSkidESP"
+ScreenGui45.Parent = TextButton42
+ScreenGui45.Enabled = false
+Frame46.Parent = ScreenGui45
+Frame46.Size = UDim2.new(1, 0, 1, 0)
+Frame46.BackgroundColor = BrickColor.new("Institutional white")
+Frame46.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame46.BackgroundTransparency = 1
+LocalScript47.Name = "Loader"
+LocalScript47.Parent = ScreenGui45
+table.insert(cors,sandbox(LocalScript47,function()
+local esplol = Instance.new("Folder")
+esplol.Name = "EspNameTags"
+esplol.Parent = game:GetService("Workspace")
+script.Parent.Frame.ViewportFrame.CurrentCamera = game:GetService("Workspace").CurrentCamera
+for i,v in pairs(game.Players:GetChildren()) do
+	local hrp = v.Character.HumanoidRootPart:Clone()
+	hrp.Transparency = 0.4
+	hrp.Material = "Neon"
+	hrp.Name = v.Name
+	hrp.Parent = script.Parent.Frame.ViewportFrame
+	bilbil = script.BillboardGui:Clone()
+	bilbil.Parent = game:GetService("Workspace").EspNameTags
+	bilbil.TextLabel.Text = v.Name
+	bilbil.Adornee = hrp
+	bilbil.Enabled = true
+end
+end))
+LocalScript47.Disabled = true
+BillboardGui48.Parent = LocalScript47
+BillboardGui48.Enabled = false
+BillboardGui48.LightInfluence = 1
+BillboardGui48.Size = UDim2.new(0, 200, 0, 50)
+BillboardGui48.Active = true
+BillboardGui48.ClipsDescendants = true
+BillboardGui48.ResetOnSpawn = false
+BillboardGui48.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+BillboardGui48.Adornee = nil
+BillboardGui48.AlwaysOnTop = true
+TextLabel49.Parent = BillboardGui48
+TextLabel49.Size = UDim2.new(0, 200, 0, 50)
+TextLabel49.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel49.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel49.BackgroundTransparency = 1
+TextLabel49.BorderSizePixel = 0
+TextLabel49.Font = Enum.Font.Roboto
+TextLabel49.FontSize = Enum.FontSize.Size14
+TextLabel49.TextColor = BrickColor.new("Institutional white")
+TextLabel49.TextColor3 = Color3.new(1, 1, 1)
+TextLabel49.TextSize = 14
+TextLabel49.TextWrap = true
+TextLabel49.TextWrapped = true
+LocalScript50.Name = "ESPUpdater"
+LocalScript50.Parent = ScreenGui45
+table.insert(cors,sandbox(LocalScript50,function()
+game:GetService("RunService").Heartbeat:Connect(function()
+for i,v in pairs(script.Parent.Frame.ViewportFrame:GetChildren()) do
+	v.CFrame = game:GetService("Players")[v.Name].Character.HumanoidRootPart.CFrame
 	end
 end)
 end))
-Frame45.Name = "Input"
-Frame45.Parent = Frame1
-Frame45.Position = UDim2.new(0.24050647, 0, 0.880624175, 0)
-Frame45.Size = UDim2.new(0, 359, 0, 30)
-Frame45.BackgroundColor = BrickColor.new("Really black")
-Frame45.BackgroundColor3 = Color3.new(0, 0, 0)
-Frame45.BackgroundTransparency = 0.800000011920929
-Frame45.BorderSizePixel = 0
-Frame45.ZIndex = 49
-TextBox46.Parent = Frame45
-TextBox46.Position = UDim2.new(-0.00217949902, 0, -0.0107320147, 0)
-TextBox46.Size = UDim2.new(0, 359, 0, 31)
-TextBox46.BackgroundColor = BrickColor.new("Maroon")
-TextBox46.BackgroundColor3 = Color3.new(0.290196, 0, 0.00392157)
-TextBox46.BorderSizePixel = 0
-TextBox46.ZIndex = 50
-TextBox46.Font = Enum.Font.SourceSansBold
-TextBox46.FontSize = Enum.FontSize.Size48
-TextBox46.Text = ""
-TextBox46.TextColor = BrickColor.new("Crimson")
-TextBox46.TextColor3 = Color3.new(0.639216, 0, 0)
-TextBox46.TextSize = 41
-TextBox46.TextWrap = true
-TextBox46.TextWrapped = true
-TextBox46.PlaceholderColor3 = Color3.new(0.639216, 0, 0)
-TextBox46.PlaceholderText = "Input"
-Frame47.Name = "Page2"
-Frame47.Parent = Frame1
-Frame47.Position = UDim2.new(0.239067331, 0, 0.0336367674, 0)
-Frame47.Visible = false
-Frame47.Size = UDim2.new(0, 360, 0, 279)
-Frame47.BackgroundColor = BrickColor.new("Institutional white")
-Frame47.BackgroundColor3 = Color3.new(1, 1, 1)
-Frame47.BackgroundTransparency = 0.8999999761581421
-Frame47.ZIndex = 49
-TextButton48.Name = "Platforms"
-TextButton48.Parent = Frame47
-TextButton48.Position = UDim2.new(0.0122507727, 0, 0.0303807408, 0)
-TextButton48.Visible = false
-TextButton48.Size = UDim2.new(0.225969106, 0, 0.118801802, 0)
-TextButton48.BackgroundColor = BrickColor.new("Maroon")
-TextButton48.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-TextButton48.BorderSizePixel = 0
-TextButton48.ZIndex = 50
-TextButton48.Font = Enum.Font.SourceSansBold
-TextButton48.FontSize = Enum.FontSize.Size18
-TextButton48.Text = "Platform Fly"
-TextButton48.TextColor = BrickColor.new("Crimson")
-TextButton48.TextColor3 = Color3.new(0.639216, 0, 0)
-TextButton48.TextScaled = true
-TextButton48.TextSize = 18
-TextButton48.TextWrap = true
-TextButton48.TextWrapped = true
-LocalScript49.Parent = TextButton48
-table.insert(cors,sandbox(LocalScript49,function()
+LocalScript50.Disabled = true
+Frame51.Name = "Input"
+Frame51.Parent = Frame1
+Frame51.Position = UDim2.new(0.24050647, 0, 0.880624175, 0)
+Frame51.Size = UDim2.new(0, 359, 0, 30)
+Frame51.BackgroundColor = BrickColor.new("Really black")
+Frame51.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame51.BackgroundTransparency = 0.800000011920929
+Frame51.BorderSizePixel = 0
+Frame51.ZIndex = 49
+TextBox52.Parent = Frame51
+TextBox52.Position = UDim2.new(-0.00217949902, 0, -0.0107320147, 0)
+TextBox52.Size = UDim2.new(0, 359, 0, 31)
+TextBox52.BackgroundColor = BrickColor.new("Maroon")
+TextBox52.BackgroundColor3 = Color3.new(0.290196, 0, 0.00392157)
+TextBox52.BorderSizePixel = 0
+TextBox52.ZIndex = 50
+TextBox52.Font = Enum.Font.SourceSansBold
+TextBox52.FontSize = Enum.FontSize.Size48
+TextBox52.Text = ""
+TextBox52.TextColor = BrickColor.new("Crimson")
+TextBox52.TextColor3 = Color3.new(0.639216, 0, 0)
+TextBox52.TextSize = 41
+TextBox52.TextWrap = true
+TextBox52.TextWrapped = true
+TextBox52.PlaceholderColor3 = Color3.new(0.639216, 0, 0)
+TextBox52.PlaceholderText = "Input"
+Frame53.Name = "Page2"
+Frame53.Parent = Frame1
+Frame53.Position = UDim2.new(0.239067331, 0, 0.0336367674, 0)
+Frame53.Visible = false
+Frame53.Size = UDim2.new(0, 360, 0, 279)
+Frame53.BackgroundColor = BrickColor.new("Institutional white")
+Frame53.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame53.BackgroundTransparency = 0.8999999761581421
+Frame53.ZIndex = 49
+TextButton54.Name = "Platforms"
+TextButton54.Parent = Frame53
+TextButton54.Position = UDim2.new(0.0122507727, 0, 0.0303807408, 0)
+TextButton54.Visible = false
+TextButton54.Size = UDim2.new(0.225969106, 0, 0.118801802, 0)
+TextButton54.BackgroundColor = BrickColor.new("Maroon")
+TextButton54.BackgroundColor3 = Color3.new(0.290196, 0, 0)
+TextButton54.BorderSizePixel = 0
+TextButton54.ZIndex = 50
+TextButton54.Font = Enum.Font.SourceSansBold
+TextButton54.FontSize = Enum.FontSize.Size18
+TextButton54.Text = "Platform Fly"
+TextButton54.TextColor = BrickColor.new("Crimson")
+TextButton54.TextColor3 = Color3.new(0.639216, 0, 0)
+TextButton54.TextScaled = true
+TextButton54.TextSize = 18
+TextButton54.TextWrap = true
+TextButton54.TextWrapped = true
+LocalScript55.Parent = TextButton54
+table.insert(cors,sandbox(LocalScript55,function()
 script.Parent.MouseButton1Click:Connect(function()
 	if script.Parent.Value.Value == "On" then
 		game:GetService("Workspace").CylCoolSkid.Parent = script.Parent
@@ -756,10 +820,10 @@ script.Parent.MouseButton1Click:Connect(function()
 	end
 end)
 end))
-StringValue50.Parent = TextButton48
-StringValue50.Value = "Off"
-LocalScript51.Parent = StringValue50
-table.insert(cors,sandbox(LocalScript51,function()
+StringValue56.Parent = TextButton54
+StringValue56.Value = "Off"
+LocalScript57.Parent = StringValue56
+table.insert(cors,sandbox(LocalScript57,function()
 while wait() do
 	if script.Parent.Value == "On" then
 		game:GetService("Workspace").CylCoolSkid.Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-3.4,0)
@@ -767,20 +831,20 @@ while wait() do
 	end
 	end
 end))
-Part52.Name = "CylCoolSkid"
-Part52.Parent = TextButton48
-Part52.CFrame = CFrame.new(-15, 3.36144137, 15, -1.49011612e-08, 0.999999881, 0, -0.999999881, -1.49011612e-08, 0, 0, 0, 1)
-Part52.Orientation = Vector3.new(0, 0, -90)
-Part52.Position = Vector3.new(-15, 3.3614413738250732, 15)
-Part52.Rotation = Vector3.new(0, 0, -90)
-Part52.Transparency = 0.6000000238418579
-Part52.Size = Vector3.new(0.2971813678741455, 7, 7)
-Part52.Anchored = true
-Part52.BottomSurface = Enum.SurfaceType.Smooth
-Part52.TopSurface = Enum.SurfaceType.Smooth
-Part52.Shape = Enum.PartType.Cylinder
-LocalScript53.Parent = Part52
-table.insert(cors,sandbox(LocalScript53,function()
+Part58.Name = "CylCoolSkid"
+Part58.Parent = TextButton54
+Part58.CFrame = CFrame.new(-15, 3.36144137, 15, -1.49011612e-08, 0.999999881, 0, -0.999999881, -1.49011612e-08, 0, 0, 0, 1)
+Part58.Orientation = Vector3.new(0, 0, -90)
+Part58.Position = Vector3.new(-15, 3.3614413738250732, 15)
+Part58.Rotation = Vector3.new(0, 0, -90)
+Part58.Transparency = 0.6000000238418579
+Part58.Size = Vector3.new(0.2971813678741455, 7, 7)
+Part58.Anchored = true
+Part58.BottomSurface = Enum.SurfaceType.Smooth
+Part58.TopSurface = Enum.SurfaceType.Smooth
+Part58.Shape = Enum.PartType.Cylinder
+LocalScript59.Parent = Part58
+table.insert(cors,sandbox(LocalScript59,function()
 function rgbmagic()
 	for h=0,1,0.003 do
 		wait()
@@ -791,26 +855,26 @@ end
 
 rgbmagic()
 end))
-TextButton54.Name = "WalkSpeed"
-TextButton54.Parent = Frame47
-TextButton54.Position = UDim2.new(0.248547107, 0, 0.0303808507, 0)
-TextButton54.Visible = false
-TextButton54.Size = UDim2.new(0.226269871, 0, 0.118470579, 0)
-TextButton54.BackgroundColor = BrickColor.new("Maroon")
-TextButton54.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-TextButton54.BorderSizePixel = 0
-TextButton54.ZIndex = 50
-TextButton54.Font = Enum.Font.SourceSansBold
-TextButton54.FontSize = Enum.FontSize.Size18
-TextButton54.Text = "WalkSpeed"
-TextButton54.TextColor = BrickColor.new("Crimson")
-TextButton54.TextColor3 = Color3.new(0.639216, 0, 0)
-TextButton54.TextScaled = true
-TextButton54.TextSize = 18
-TextButton54.TextWrap = true
-TextButton54.TextWrapped = true
-LocalScript55.Parent = TextButton54
-table.insert(cors,sandbox(LocalScript55,function()
+TextButton60.Name = "WalkSpeed"
+TextButton60.Parent = Frame53
+TextButton60.Position = UDim2.new(0.248547107, 0, 0.0303808507, 0)
+TextButton60.Visible = false
+TextButton60.Size = UDim2.new(0.226269871, 0, 0.118470579, 0)
+TextButton60.BackgroundColor = BrickColor.new("Maroon")
+TextButton60.BackgroundColor3 = Color3.new(0.290196, 0, 0)
+TextButton60.BorderSizePixel = 0
+TextButton60.ZIndex = 50
+TextButton60.Font = Enum.Font.SourceSansBold
+TextButton60.FontSize = Enum.FontSize.Size18
+TextButton60.Text = "WalkSpeed"
+TextButton60.TextColor = BrickColor.new("Crimson")
+TextButton60.TextColor3 = Color3.new(0.639216, 0, 0)
+TextButton60.TextScaled = true
+TextButton60.TextSize = 18
+TextButton60.TextWrap = true
+TextButton60.TextWrapped = true
+LocalScript61.Parent = TextButton60
+table.insert(cors,sandbox(LocalScript61,function()
 script.Parent.MouseButton1Click:Connect(function()
 	if script.Parent.Value.Value == "On" then
 		script.Parent.Value.Value = "Off"
@@ -831,54 +895,54 @@ script.Parent.MouseButton1Click:Connect(function()
 	end
 end)
 end))
-StringValue56.Parent = TextButton54
-StringValue56.Value = "Off"
-TextButton57.Name = "DeleteSpawnedStuff"
-TextButton57.Parent = Frame47
-TextButton57.Position = UDim2.new(0.486000001, 0, 0.173999995, 0)
-TextButton57.Visible = false
-TextButton57.Size = UDim2.new(0.226269871, 0, 0.118470579, 0)
-TextButton57.BackgroundColor = BrickColor.new("Maroon")
-TextButton57.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-TextButton57.BorderSizePixel = 0
-TextButton57.ZIndex = 50
-TextButton57.Font = Enum.Font.SourceSansBold
-TextButton57.FontSize = Enum.FontSize.Size18
-TextButton57.Text = "Delete Spawned Stuff"
-TextButton57.TextColor = BrickColor.new("Crimson")
-TextButton57.TextColor3 = Color3.new(0.639216, 0, 0)
-TextButton57.TextScaled = true
-TextButton57.TextSize = 18
-TextButton57.TextWrap = true
-TextButton57.TextWrapped = true
-LocalScript58.Parent = TextButton57
-table.insert(cors,sandbox(LocalScript58,function()
+StringValue62.Parent = TextButton60
+StringValue62.Value = "Off"
+TextButton63.Name = "DeleteSpawnedStuff"
+TextButton63.Parent = Frame53
+TextButton63.Position = UDim2.new(0.486000001, 0, 0.173999995, 0)
+TextButton63.Visible = false
+TextButton63.Size = UDim2.new(0.226269871, 0, 0.118470579, 0)
+TextButton63.BackgroundColor = BrickColor.new("Maroon")
+TextButton63.BackgroundColor3 = Color3.new(0.290196, 0, 0)
+TextButton63.BorderSizePixel = 0
+TextButton63.ZIndex = 50
+TextButton63.Font = Enum.Font.SourceSansBold
+TextButton63.FontSize = Enum.FontSize.Size18
+TextButton63.Text = "Delete Spawned Stuff"
+TextButton63.TextColor = BrickColor.new("Crimson")
+TextButton63.TextColor3 = Color3.new(0.639216, 0, 0)
+TextButton63.TextScaled = true
+TextButton63.TextSize = 18
+TextButton63.TextWrap = true
+TextButton63.TextWrapped = true
+LocalScript64.Parent = TextButton63
+table.insert(cors,sandbox(LocalScript64,function()
 script.Parent.MouseButton1Click:Connect(function()
 	game:GetService("Workspace").C00lSkidStuff:Remove()
 end)
 end))
-StringValue59.Parent = TextButton57
-StringValue59.Value = "Off"
-TextButton60.Name = "TpPad1"
-TextButton60.Parent = Frame47
-TextButton60.Position = UDim2.new(0.726999998, 0, 0.0299999993, 0)
-TextButton60.Visible = false
-TextButton60.Size = UDim2.new(0.225999996, 0, 0.118000001, 0)
-TextButton60.BackgroundColor = BrickColor.new("Maroon")
-TextButton60.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-TextButton60.BorderSizePixel = 0
-TextButton60.ZIndex = 50
-TextButton60.Font = Enum.Font.SourceSansBold
-TextButton60.FontSize = Enum.FontSize.Size18
-TextButton60.Text = "Teleport Pad 1"
-TextButton60.TextColor = BrickColor.new("Crimson")
-TextButton60.TextColor3 = Color3.new(0.639216, 0, 0)
-TextButton60.TextScaled = true
-TextButton60.TextSize = 18
-TextButton60.TextWrap = true
-TextButton60.TextWrapped = true
-LocalScript61.Parent = TextButton60
-table.insert(cors,sandbox(LocalScript61,function()
+StringValue65.Parent = TextButton63
+StringValue65.Value = "Off"
+TextButton66.Name = "TpPad1"
+TextButton66.Parent = Frame53
+TextButton66.Position = UDim2.new(0.726999998, 0, 0.0299999993, 0)
+TextButton66.Visible = false
+TextButton66.Size = UDim2.new(0.225999996, 0, 0.118000001, 0)
+TextButton66.BackgroundColor = BrickColor.new("Maroon")
+TextButton66.BackgroundColor3 = Color3.new(0.290196, 0, 0)
+TextButton66.BorderSizePixel = 0
+TextButton66.ZIndex = 50
+TextButton66.Font = Enum.Font.SourceSansBold
+TextButton66.FontSize = Enum.FontSize.Size18
+TextButton66.Text = "Teleport Pad 1"
+TextButton66.TextColor = BrickColor.new("Crimson")
+TextButton66.TextColor3 = Color3.new(0.639216, 0, 0)
+TextButton66.TextScaled = true
+TextButton66.TextSize = 18
+TextButton66.TextWrap = true
+TextButton66.TextWrapped = true
+LocalScript67.Parent = TextButton66
+table.insert(cors,sandbox(LocalScript67,function()
 script.Parent.MouseButton1Click:Connect(function()
 	if game:GetService("Workspace"):FindFirstChild("C00lGuiStuff") then else
 		local folder = Instance.new("Folder")
@@ -895,44 +959,44 @@ script.Parent.MouseButton1Click:Connect(function()
 	end
 	end)
 end))
-StringValue62.Parent = TextButton60
-StringValue62.Value = "Off"
-Part63.Name = "TpPad1CoolSkid"
-Part63.Parent = TextButton60
-Part63.CFrame = CFrame.new(-15, 3.36144137, 15, -1.49011612e-08, 0.999999881, 0, -0.999999881, -1.49011612e-08, 0, 0, 0, 1)
-Part63.Orientation = Vector3.new(0, 0, -90)
-Part63.Position = Vector3.new(-15, 3.3614413738250732, 15)
-Part63.Rotation = Vector3.new(0, 0, -90)
-Part63.Color = Color3.new(0.882353, 0.411765, 0)
-Part63.Transparency = 0.10000000149011612
-Part63.Size = Vector3.new(0.2971813678741455, 7, 7)
-Part63.Anchored = true
-Part63.BottomSurface = Enum.SurfaceType.Smooth
-Part63.BrickColor = BrickColor.new("Flame reddish orange")
-Part63.TopSurface = Enum.SurfaceType.Smooth
-Part63.brickColor = BrickColor.new("Flame reddish orange")
-TextButton64.Name = "TpPad2"
-TextButton64.Parent = Frame47
-TextButton64.Position = UDim2.new(0.0127477013, 0, 0.173753202, 0)
-TextButton64.Visible = false
-TextButton64.Size = UDim2.new(0.225870773, 0, 0.118801802, 0)
-TextButton64.BackgroundColor = BrickColor.new("Maroon")
-TextButton64.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-TextButton64.BorderSizePixel = 0
-TextButton64.ZIndex = 50
-TextButton64.Font = Enum.Font.SourceSansBold
-TextButton64.FontSize = Enum.FontSize.Size18
-TextButton64.Text = "Teleport Pad 2"
-TextButton64.TextColor = BrickColor.new("Crimson")
-TextButton64.TextColor3 = Color3.new(0.639216, 0, 0)
-TextButton64.TextScaled = true
-TextButton64.TextSize = 18
-TextButton64.TextWrap = true
-TextButton64.TextWrapped = true
-StringValue65.Parent = TextButton64
-StringValue65.Value = "Off"
-LocalScript66.Parent = TextButton64
-table.insert(cors,sandbox(LocalScript66,function()
+StringValue68.Parent = TextButton66
+StringValue68.Value = "Off"
+Part69.Name = "TpPad1CoolSkid"
+Part69.Parent = TextButton66
+Part69.CFrame = CFrame.new(-15, 3.36144137, 15, -1.49011612e-08, 0.999999881, 0, -0.999999881, -1.49011612e-08, 0, 0, 0, 1)
+Part69.Orientation = Vector3.new(0, 0, -90)
+Part69.Position = Vector3.new(-15, 3.3614413738250732, 15)
+Part69.Rotation = Vector3.new(0, 0, -90)
+Part69.Color = Color3.new(0.882353, 0.411765, 0)
+Part69.Transparency = 0.10000000149011612
+Part69.Size = Vector3.new(0.2971813678741455, 7, 7)
+Part69.Anchored = true
+Part69.BottomSurface = Enum.SurfaceType.Smooth
+Part69.BrickColor = BrickColor.new("Flame reddish orange")
+Part69.TopSurface = Enum.SurfaceType.Smooth
+Part69.brickColor = BrickColor.new("Flame reddish orange")
+TextButton70.Name = "TpPad2"
+TextButton70.Parent = Frame53
+TextButton70.Position = UDim2.new(0.0127477013, 0, 0.173753202, 0)
+TextButton70.Visible = false
+TextButton70.Size = UDim2.new(0.225870773, 0, 0.118801802, 0)
+TextButton70.BackgroundColor = BrickColor.new("Maroon")
+TextButton70.BackgroundColor3 = Color3.new(0.290196, 0, 0)
+TextButton70.BorderSizePixel = 0
+TextButton70.ZIndex = 50
+TextButton70.Font = Enum.Font.SourceSansBold
+TextButton70.FontSize = Enum.FontSize.Size18
+TextButton70.Text = "Teleport Pad 2"
+TextButton70.TextColor = BrickColor.new("Crimson")
+TextButton70.TextColor3 = Color3.new(0.639216, 0, 0)
+TextButton70.TextScaled = true
+TextButton70.TextSize = 18
+TextButton70.TextWrap = true
+TextButton70.TextWrapped = true
+StringValue71.Parent = TextButton70
+StringValue71.Value = "Off"
+LocalScript72.Parent = TextButton70
+table.insert(cors,sandbox(LocalScript72,function()
 script.Parent.MouseButton1Click:Connect(function()
 	if game:GetService("Workspace"):FindFirstChild("C00lGuiStuff") then else
 		local folder = Instance.new("Folder")
@@ -949,53 +1013,53 @@ script.Parent.MouseButton1Click:Connect(function()
 	end
 end)
 end))
-Part67.Name = "TpPad2CoolSkid"
-Part67.Parent = TextButton64
-Part67.CFrame = CFrame.new(-15, 3.36144137, 15, -1.49011612e-08, 0.999999881, 0, -0.999999881, -1.49011612e-08, 0, 0, 0, 1)
-Part67.Orientation = Vector3.new(0, 0, -90)
-Part67.Position = Vector3.new(-15, 3.3614413738250732, 15)
-Part67.Rotation = Vector3.new(0, 0, -90)
-Part67.Color = Color3.new(0.333333, 0, 1)
-Part67.Transparency = 0.10000000149011612
-Part67.Size = Vector3.new(0.2971813678741455, 7, 7)
-Part67.Anchored = true
-Part67.BottomSurface = Enum.SurfaceType.Smooth
-Part67.BrickColor = BrickColor.new("Really blue")
-Part67.TopSurface = Enum.SurfaceType.Smooth
-Part67.brickColor = BrickColor.new("Really blue")
-TextButton68.Name = "SpawnPlatform"
-TextButton68.Parent = Frame47
-TextButton68.Position = UDim2.new(0.248999998, 0, 0.173999995, 0)
-TextButton68.Visible = false
-TextButton68.Size = UDim2.new(0.226269871, 0, 0.118470579, 0)
-TextButton68.BackgroundColor = BrickColor.new("Maroon")
-TextButton68.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-TextButton68.BorderSizePixel = 0
-TextButton68.ZIndex = 50
-TextButton68.Font = Enum.Font.SourceSansBold
-TextButton68.FontSize = Enum.FontSize.Size18
-TextButton68.Text = "Spawn Platform"
-TextButton68.TextColor = BrickColor.new("Crimson")
-TextButton68.TextColor3 = Color3.new(0.639216, 0, 0)
-TextButton68.TextScaled = true
-TextButton68.TextSize = 18
-TextButton68.TextWrap = true
-TextButton68.TextWrapped = true
-StringValue69.Parent = TextButton68
-StringValue69.Value = "Off"
-Part70.Name = "PlatformC00lSkid"
-Part70.Parent = TextButton68
-Part70.CFrame = CFrame.new(-26.9980011, 0.300000012, 31.8531647, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Part70.Position = Vector3.new(-26.998001098632812, 0.30000001192092896, 31.853164672851562)
-Part70.Color = Color3.new(0.388235, 0.372549, 0.384314)
-Part70.Transparency = 0.5
-Part70.Size = Vector3.new(13, 0.6000000238418579, 13)
-Part70.Anchored = true
-Part70.BottomSurface = Enum.SurfaceType.Smooth
-Part70.BrickColor = BrickColor.new("Dark stone grey")
-Part70.brickColor = BrickColor.new("Dark stone grey")
-LocalScript71.Parent = Part70
-table.insert(cors,sandbox(LocalScript71,function()
+Part73.Name = "TpPad2CoolSkid"
+Part73.Parent = TextButton70
+Part73.CFrame = CFrame.new(-15, 3.36144137, 15, -1.49011612e-08, 0.999999881, 0, -0.999999881, -1.49011612e-08, 0, 0, 0, 1)
+Part73.Orientation = Vector3.new(0, 0, -90)
+Part73.Position = Vector3.new(-15, 3.3614413738250732, 15)
+Part73.Rotation = Vector3.new(0, 0, -90)
+Part73.Color = Color3.new(0.333333, 0, 1)
+Part73.Transparency = 0.10000000149011612
+Part73.Size = Vector3.new(0.2971813678741455, 7, 7)
+Part73.Anchored = true
+Part73.BottomSurface = Enum.SurfaceType.Smooth
+Part73.BrickColor = BrickColor.new("Really blue")
+Part73.TopSurface = Enum.SurfaceType.Smooth
+Part73.brickColor = BrickColor.new("Really blue")
+TextButton74.Name = "SpawnPlatform"
+TextButton74.Parent = Frame53
+TextButton74.Position = UDim2.new(0.248999998, 0, 0.173999995, 0)
+TextButton74.Visible = false
+TextButton74.Size = UDim2.new(0.226269871, 0, 0.118470579, 0)
+TextButton74.BackgroundColor = BrickColor.new("Maroon")
+TextButton74.BackgroundColor3 = Color3.new(0.290196, 0, 0)
+TextButton74.BorderSizePixel = 0
+TextButton74.ZIndex = 50
+TextButton74.Font = Enum.Font.SourceSansBold
+TextButton74.FontSize = Enum.FontSize.Size18
+TextButton74.Text = "Spawn Platform"
+TextButton74.TextColor = BrickColor.new("Crimson")
+TextButton74.TextColor3 = Color3.new(0.639216, 0, 0)
+TextButton74.TextScaled = true
+TextButton74.TextSize = 18
+TextButton74.TextWrap = true
+TextButton74.TextWrapped = true
+StringValue75.Parent = TextButton74
+StringValue75.Value = "Off"
+Part76.Name = "PlatformC00lSkid"
+Part76.Parent = TextButton74
+Part76.CFrame = CFrame.new(-26.9980011, 0.300000012, 31.8531647, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part76.Position = Vector3.new(-26.998001098632812, 0.30000001192092896, 31.853164672851562)
+Part76.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part76.Transparency = 0.5
+Part76.Size = Vector3.new(13, 0.6000000238418579, 13)
+Part76.Anchored = true
+Part76.BottomSurface = Enum.SurfaceType.Smooth
+Part76.BrickColor = BrickColor.new("Dark stone grey")
+Part76.brickColor = BrickColor.new("Dark stone grey")
+LocalScript77.Parent = Part76
+table.insert(cors,sandbox(LocalScript77,function()
 function rgbmagic()
 	for h=0,1,0.003 do
 		wait()
@@ -1006,8 +1070,8 @@ end
 
 rgbmagic()
 end))
-LocalScript72.Parent = TextButton68
-table.insert(cors,sandbox(LocalScript72,function()
+LocalScript78.Parent = TextButton74
+table.insert(cors,sandbox(LocalScript78,function()
 script.Parent.MouseButton1Click:Connect(function()
 	if game:GetService("Workspace"):FindFirstChild("C00lSkidStuff") then 
 		print("Found it uwu")
@@ -1021,26 +1085,26 @@ script.Parent.MouseButton1Click:Connect(function()
 	script.Parent.PlatformC00lSkid:Clone().Parent = game:GetService("Workspace").C00lSkidStuff
 end)
 end))
-TextButton73.Name = "JumpPower"
-TextButton73.Parent = Frame47
-TextButton73.Position = UDim2.new(0.486300409, 0, 0.0303808507, 0)
-TextButton73.Visible = false
-TextButton73.Size = UDim2.new(0.226269871, 0, 0.118470579, 0)
-TextButton73.BackgroundColor = BrickColor.new("Maroon")
-TextButton73.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-TextButton73.BorderSizePixel = 0
-TextButton73.ZIndex = 50
-TextButton73.Font = Enum.Font.SourceSansBold
-TextButton73.FontSize = Enum.FontSize.Size18
-TextButton73.Text = "JumpPower"
-TextButton73.TextColor = BrickColor.new("Crimson")
-TextButton73.TextColor3 = Color3.new(0.639216, 0, 0)
-TextButton73.TextScaled = true
-TextButton73.TextSize = 18
-TextButton73.TextWrap = true
-TextButton73.TextWrapped = true
-LocalScript74.Parent = TextButton73
-table.insert(cors,sandbox(LocalScript74,function()
+TextButton79.Name = "JumpPower"
+TextButton79.Parent = Frame53
+TextButton79.Position = UDim2.new(0.486300409, 0, 0.0303808507, 0)
+TextButton79.Visible = false
+TextButton79.Size = UDim2.new(0.226269871, 0, 0.118470579, 0)
+TextButton79.BackgroundColor = BrickColor.new("Maroon")
+TextButton79.BackgroundColor3 = Color3.new(0.290196, 0, 0)
+TextButton79.BorderSizePixel = 0
+TextButton79.ZIndex = 50
+TextButton79.Font = Enum.Font.SourceSansBold
+TextButton79.FontSize = Enum.FontSize.Size18
+TextButton79.Text = "JumpPower"
+TextButton79.TextColor = BrickColor.new("Crimson")
+TextButton79.TextColor3 = Color3.new(0.639216, 0, 0)
+TextButton79.TextScaled = true
+TextButton79.TextSize = 18
+TextButton79.TextWrap = true
+TextButton79.TextWrapped = true
+LocalScript80.Parent = TextButton79
+table.insert(cors,sandbox(LocalScript80,function()
 script.Parent.MouseButton1Click:Connect(function()
 	if script.Parent.Value.Value == "On" then
 		script.Parent.Value.Value = "Off"
@@ -1060,28 +1124,28 @@ script.Parent.MouseButton1Click:Connect(function()
 	end
 end)
 end))
-StringValue75.Parent = TextButton73
-StringValue75.Value = "Off"
-TextButton76.Name = "C00lKid Vibes"
-TextButton76.Parent = Frame47
-TextButton76.Position = UDim2.new(0.726999998, 0, 0.173999995, 0)
-TextButton76.Visible = false
-TextButton76.Size = UDim2.new(0.225999996, 0, 0.118000001, 0)
-TextButton76.BackgroundColor = BrickColor.new("Maroon")
-TextButton76.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-TextButton76.BorderSizePixel = 0
-TextButton76.ZIndex = 50
-TextButton76.Font = Enum.Font.SourceSansBold
-TextButton76.FontSize = Enum.FontSize.Size18
-TextButton76.Text = "C00lkid Vibes"
-TextButton76.TextColor = BrickColor.new("Crimson")
-TextButton76.TextColor3 = Color3.new(0.639216, 0, 0)
-TextButton76.TextScaled = true
-TextButton76.TextSize = 18
-TextButton76.TextWrap = true
-TextButton76.TextWrapped = true
-LocalScript77.Parent = TextButton76
-table.insert(cors,sandbox(LocalScript77,function()
+StringValue81.Parent = TextButton79
+StringValue81.Value = "Off"
+TextButton82.Name = "C00lKid Vibes"
+TextButton82.Parent = Frame53
+TextButton82.Position = UDim2.new(0.726999998, 0, 0.173999995, 0)
+TextButton82.Visible = false
+TextButton82.Size = UDim2.new(0.225999996, 0, 0.118000001, 0)
+TextButton82.BackgroundColor = BrickColor.new("Maroon")
+TextButton82.BackgroundColor3 = Color3.new(0.290196, 0, 0)
+TextButton82.BorderSizePixel = 0
+TextButton82.ZIndex = 50
+TextButton82.Font = Enum.Font.SourceSansBold
+TextButton82.FontSize = Enum.FontSize.Size18
+TextButton82.Text = "C00lkid Vibes"
+TextButton82.TextColor = BrickColor.new("Crimson")
+TextButton82.TextColor3 = Color3.new(0.639216, 0, 0)
+TextButton82.TextScaled = true
+TextButton82.TextSize = 18
+TextButton82.TextWrap = true
+TextButton82.TextWrapped = true
+LocalScript83.Parent = TextButton82
+table.insert(cors,sandbox(LocalScript83,function()
 script.Parent.MouseButton1Click:Connect(function()
 	if script.Parent.Value.Value == "Off" then
 	script.Parent.Value.Value = "On"
@@ -1138,27 +1202,27 @@ script.Parent.MouseButton1Click:Connect(function()
 
 	end)
 end))
-StringValue78.Parent = TextButton76
-StringValue78.Value = "Off"
-StringValue79.Name = "Version"
-StringValue79.Parent = Frame1
-StringValue79.Value = "0.01"
-TextButton80.Name = "Open/Close"
-TextButton80.Parent = ScreenGui0
-TextButton80.Position = UDim2.new(0.00100000005, 0, 0.704999983, 0)
-TextButton80.Size = UDim2.new(0.0320000015, 0, 0.0489999987, 0)
-TextButton80.BackgroundColor = BrickColor.new("Crimson")
-TextButton80.BackgroundColor3 = Color3.new(0.576471, 0, 0)
-TextButton80.BorderSizePixel = 0
-TextButton80.ZIndex = 99999
-TextButton80.Font = Enum.Font.SourceSansBold
-TextButton80.FontSize = Enum.FontSize.Size14
-TextButton80.Text = "open"
-TextButton80.TextColor = BrickColor.new("Maroon")
-TextButton80.TextColor3 = Color3.new(0.439216, 0, 0)
-TextButton80.TextSize = 14
-LocalScript81.Parent = TextButton80
-table.insert(cors,sandbox(LocalScript81,function()
+StringValue84.Parent = TextButton82
+StringValue84.Value = "Off"
+StringValue85.Name = "Version"
+StringValue85.Parent = Frame1
+StringValue85.Value = "0.02"
+TextButton86.Name = "Open/Close"
+TextButton86.Parent = ScreenGui0
+TextButton86.Position = UDim2.new(0.00100000005, 0, 0.704999983, 0)
+TextButton86.Size = UDim2.new(0.0320000015, 0, 0.0489999987, 0)
+TextButton86.BackgroundColor = BrickColor.new("Crimson")
+TextButton86.BackgroundColor3 = Color3.new(0.576471, 0, 0)
+TextButton86.BorderSizePixel = 0
+TextButton86.ZIndex = 99999
+TextButton86.Font = Enum.Font.SourceSansBold
+TextButton86.FontSize = Enum.FontSize.Size14
+TextButton86.Text = "close"
+TextButton86.TextColor = BrickColor.new("Maroon")
+TextButton86.TextColor3 = Color3.new(0.439216, 0, 0)
+TextButton86.TextSize = 14
+LocalScript87.Parent = TextButton86
+table.insert(cors,sandbox(LocalScript87,function()
 function click()
 if script.Parent.Text == "Close" then
 script.Parent.Parent.Main.Visible = false
@@ -1170,19 +1234,19 @@ end
 
 script.Parent.MouseButton1Down:connect(click)
 end))
-LocalScript82.Name = "CreateFolder"
-LocalScript82.Parent = ScreenGui0
-table.insert(cors,sandbox(LocalScript82,function()
+LocalScript88.Name = "CreateFolder"
+LocalScript88.Parent = ScreenGui0
+table.insert(cors,sandbox(LocalScript88,function()
 local folder = Instance.new("Folder")
 folder.Parent = game:GetService("Workspace")
 folder.Name = "C00lSkidStuff"
 end))
-LocalScript83.Parent = ScreenGui0
-table.insert(cors,sandbox(LocalScript83,function()
+LocalScript89.Parent = ScreenGui0
+table.insert(cors,sandbox(LocalScript89,function()
 script.Parent.Name = math.random()
 end))
 for i,v in pairs(mas:GetChildren()) do
-	v.Parent = game.Players.LocalPlayer.PlayerGui
+	v.Parent = game:GetService("Players").LocalPlayer.PlayerGui
 	pcall(function() v:MakeJoints() end)
 end
 mas:Destroy()
