@@ -7,6 +7,7 @@
 
 --This isnt a threat, its the truth
 
+
 --[=[
  d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
 88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
@@ -16,7 +17,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
 ]=]
 
--- Instances: 91 | Scripts: 32 | Modules: 0
+-- Instances: 84 | Scripts: 30 | Modules: 0
 local G2L = {};
 
 -- StarterGui.C00lSkid
@@ -382,162 +383,173 @@ G2L["2c"]["Value"] = [[Off]];
 G2L["2d"] = Instance.new("LocalScript", G2L["2b"]);
 
 
--- StarterGui.C00lSkid.Main.Page1.ESP.CoolSkidESP
-G2L["2e"] = Instance.new("ScreenGui", G2L["2b"]);
-G2L["2e"]["Enabled"] = false;
-G2L["2e"]["IgnoreGuiInset"] = true;
-G2L["2e"]["Name"] = [[CoolSkidESP]];
-
--- StarterGui.C00lSkid.Main.Page1.ESP.CoolSkidESP.Frame
-G2L["2f"] = Instance.new("Frame", G2L["2e"]);
-G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2f"]["BackgroundTransparency"] = 1;
-G2L["2f"]["Size"] = UDim2.new(1, 0, 1, 0);
-
--- StarterGui.C00lSkid.Main.Page1.ESP.CoolSkidESP.Frame.ViewportFrame
-G2L["30"] = Instance.new("ViewportFrame", G2L["2f"]);
-G2L["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["30"]["BackgroundTransparency"] = 1;
-G2L["30"]["Size"] = UDim2.new(1, 0, 1, 0);
-
--- StarterGui.C00lSkid.Main.Page1.ESP.CoolSkidESP.Loader
-G2L["31"] = Instance.new("LocalScript", G2L["2e"]);
-G2L["31"]["Name"] = [[Loader]];
-G2L["31"]["Disabled"] = true;
-
--- StarterGui.C00lSkid.Main.Page1.ESP.CoolSkidESP.Loader.BillboardGui
-G2L["32"] = Instance.new("BillboardGui", G2L["31"]);
-G2L["32"]["Active"] = true;
-G2L["32"]["ResetOnSpawn"] = false;
-G2L["32"]["LightInfluence"] = 1;
-G2L["32"]["AlwaysOnTop"] = true;
-G2L["32"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["32"]["Enabled"] = false;
-G2L["32"]["ClipsDescendants"] = true;
-G2L["32"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-
--- StarterGui.C00lSkid.Main.Page1.ESP.CoolSkidESP.Loader.BillboardGui.TextLabel
-G2L["33"] = Instance.new("TextLabel", G2L["32"]);
-G2L["33"]["TextWrapped"] = true;
-G2L["33"]["BorderSizePixel"] = 0;
-G2L["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["33"]["TextSize"] = 14;
-G2L["33"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["33"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["33"]["Font"] = Enum.Font.Roboto;
-G2L["33"]["BackgroundTransparency"] = 1;
-
--- StarterGui.C00lSkid.Main.Page1.ESP.CoolSkidESP.ESPUpdater
-G2L["34"] = Instance.new("LocalScript", G2L["2e"]);
-G2L["34"]["Name"] = [[ESPUpdater]];
-G2L["34"]["Disabled"] = true;
-
 -- StarterGui.C00lSkid.Main.Input
-G2L["35"] = Instance.new("Frame", G2L["2"]);
-G2L["35"]["ZIndex"] = 49;
-G2L["35"]["BorderSizePixel"] = 0;
-G2L["35"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["35"]["BackgroundTransparency"] = 0.800000011920929;
-G2L["35"]["Size"] = UDim2.new(0, 359, 0, 30);
-G2L["35"]["Position"] = UDim2.new(0.24050647020339966, 0, 0.8806241750717163, 0);
-G2L["35"]["Name"] = [[Input]];
+G2L["2e"] = Instance.new("Frame", G2L["2"]);
+G2L["2e"]["ZIndex"] = 49;
+G2L["2e"]["BorderSizePixel"] = 0;
+G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["BackgroundTransparency"] = 0.800000011920929;
+G2L["2e"]["Size"] = UDim2.new(0, 359, 0, 30);
+G2L["2e"]["Position"] = UDim2.new(0.24050647020339966, 0, 0.8806241750717163, 0);
+G2L["2e"]["Name"] = [[Input]];
 
 -- StarterGui.C00lSkid.Main.Input.TextBox
-G2L["36"] = Instance.new("TextBox", G2L["35"]);
-G2L["36"]["PlaceholderColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["36"]["ZIndex"] = 50;
-G2L["36"]["BorderSizePixel"] = 0;
-G2L["36"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["36"]["TextWrapped"] = true;
-G2L["36"]["TextSize"] = 41;
-G2L["36"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 2);
-G2L["36"]["PlaceholderText"] = [[Input]];
-G2L["36"]["Size"] = UDim2.new(0, 359, 0, 31);
-G2L["36"]["Text"] = [[]];
-G2L["36"]["Position"] = UDim2.new(-0.002179499017074704, 0, -0.010732014663517475, 0);
-G2L["36"]["Font"] = Enum.Font.SourceSansBold;
+G2L["2f"] = Instance.new("TextBox", G2L["2e"]);
+G2L["2f"]["PlaceholderColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["2f"]["ZIndex"] = 50;
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["2f"]["TextWrapped"] = true;
+G2L["2f"]["TextSize"] = 41;
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 2);
+G2L["2f"]["PlaceholderText"] = [[Input]];
+G2L["2f"]["Size"] = UDim2.new(0, 359, 0, 31);
+G2L["2f"]["Text"] = [[]];
+G2L["2f"]["Position"] = UDim2.new(-0.002179499017074704, 0, -0.010732014663517475, 0);
+G2L["2f"]["Font"] = Enum.Font.SourceSansBold;
 
 -- StarterGui.C00lSkid.Main.Page2
-G2L["37"] = Instance.new("Frame", G2L["2"]);
-G2L["37"]["ZIndex"] = 49;
-G2L["37"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["37"]["BackgroundTransparency"] = 0.8999999761581421;
-G2L["37"]["Size"] = UDim2.new(0, 360, 0, 279);
-G2L["37"]["Position"] = UDim2.new(0.23906733095645905, 0, 0.03363676741719246, 0);
-G2L["37"]["Visible"] = false;
-G2L["37"]["Name"] = [[Page2]];
+G2L["30"] = Instance.new("Frame", G2L["2"]);
+G2L["30"]["ZIndex"] = 49;
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["30"]["BackgroundTransparency"] = 0.8999999761581421;
+G2L["30"]["Size"] = UDim2.new(0, 360, 0, 279);
+G2L["30"]["Position"] = UDim2.new(0.23906733095645905, 0, 0.03363676741719246, 0);
+G2L["30"]["Visible"] = false;
+G2L["30"]["Name"] = [[Page2]];
 
 -- StarterGui.C00lSkid.Main.Page2.Platforms
-G2L["38"] = Instance.new("TextButton", G2L["37"]);
-G2L["38"]["TextWrapped"] = true;
-G2L["38"]["ZIndex"] = 50;
-G2L["38"]["BorderSizePixel"] = 0;
-G2L["38"]["TextSize"] = 18;
-G2L["38"]["TextScaled"] = true;
-G2L["38"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
-G2L["38"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["38"]["Visible"] = false;
-G2L["38"]["Size"] = UDim2.new(0.2259691059589386, 0, 0.11880180239677429, 0);
-G2L["38"]["Name"] = [[Platforms]];
-G2L["38"]["Text"] = [[Platform Fly]];
-G2L["38"]["Font"] = Enum.Font.SourceSansBold;
-G2L["38"]["Position"] = UDim2.new(0.012250772677361965, 0, 0.030380740761756897, 0);
+G2L["31"] = Instance.new("TextButton", G2L["30"]);
+G2L["31"]["TextWrapped"] = true;
+G2L["31"]["ZIndex"] = 50;
+G2L["31"]["BorderSizePixel"] = 0;
+G2L["31"]["TextSize"] = 18;
+G2L["31"]["TextScaled"] = true;
+G2L["31"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
+G2L["31"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["31"]["Visible"] = false;
+G2L["31"]["Size"] = UDim2.new(0.2259691059589386, 0, 0.11880180239677429, 0);
+G2L["31"]["Name"] = [[Platforms]];
+G2L["31"]["Text"] = [[Platform Fly]];
+G2L["31"]["Font"] = Enum.Font.SourceSansBold;
+G2L["31"]["Position"] = UDim2.new(0.012250772677361965, 0, 0.030380740761756897, 0);
 
 -- StarterGui.C00lSkid.Main.Page2.Platforms.LocalScript
-G2L["39"] = Instance.new("LocalScript", G2L["38"]);
+G2L["32"] = Instance.new("LocalScript", G2L["31"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.Platforms.Value
-G2L["3a"] = Instance.new("StringValue", G2L["38"]);
-G2L["3a"]["Value"] = [[Off]];
+G2L["33"] = Instance.new("StringValue", G2L["31"]);
+G2L["33"]["Value"] = [[Off]];
 
 -- StarterGui.C00lSkid.Main.Page2.Platforms.Value.LocalScript
-G2L["3b"] = Instance.new("LocalScript", G2L["3a"]);
+G2L["34"] = Instance.new("LocalScript", G2L["33"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.Platforms.CylCoolSkid
-G2L["3c"] = Instance.new("Part", G2L["38"]);
-G2L["3c"]["BottomSurface"] = Enum.SurfaceType.Smooth;
-G2L["3c"]["Transparency"] = 0.6000000238418579;
-G2L["3c"]["Orientation"] = Vector3.new(0, 0, -90);
-G2L["3c"]["Shape"] = Enum.PartType.Cylinder;
-G2L["3c"]["TopSurface"] = Enum.SurfaceType.Smooth;
-G2L["3c"]["Anchored"] = true;
-G2L["3c"]["Size"] = Vector3.new(0.2971813678741455, 7, 7);
-G2L["3c"]["Rotation"] = Vector3.new(0, 0, -90);
-G2L["3c"]["Name"] = [[CylCoolSkid]];
-G2L["3c"]["Position"] = Vector3.new(-15, 3.3614413738250732, 15);
+G2L["35"] = Instance.new("Part", G2L["31"]);
+G2L["35"]["BottomSurface"] = Enum.SurfaceType.Smooth;
+G2L["35"]["Transparency"] = 0.6000000238418579;
+G2L["35"]["Orientation"] = Vector3.new(0, 0, -90);
+G2L["35"]["Shape"] = Enum.PartType.Cylinder;
+G2L["35"]["TopSurface"] = Enum.SurfaceType.Smooth;
+G2L["35"]["Anchored"] = true;
+G2L["35"]["Size"] = Vector3.new(0.2971813678741455, 7, 7);
+G2L["35"]["Rotation"] = Vector3.new(0, 0, -90);
+G2L["35"]["Name"] = [[CylCoolSkid]];
+G2L["35"]["Position"] = Vector3.new(-15, 3.3614413738250732, 15);
 
 -- StarterGui.C00lSkid.Main.Page2.Platforms.CylCoolSkid.LocalScript
-G2L["3d"] = Instance.new("LocalScript", G2L["3c"]);
+G2L["36"] = Instance.new("LocalScript", G2L["35"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.WalkSpeed
-G2L["3e"] = Instance.new("TextButton", G2L["37"]);
-G2L["3e"]["TextWrapped"] = true;
-G2L["3e"]["ZIndex"] = 50;
-G2L["3e"]["BorderSizePixel"] = 0;
-G2L["3e"]["TextSize"] = 18;
-G2L["3e"]["TextScaled"] = true;
-G2L["3e"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
-G2L["3e"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["3e"]["Visible"] = false;
-G2L["3e"]["Size"] = UDim2.new(0.22626987099647522, 0, 0.11847057938575745, 0);
-G2L["3e"]["Name"] = [[WalkSpeed]];
-G2L["3e"]["Text"] = [[WalkSpeed]];
-G2L["3e"]["Font"] = Enum.Font.SourceSansBold;
-G2L["3e"]["Position"] = UDim2.new(0.24854710698127747, 0, 0.0303808506578207, 0);
+G2L["37"] = Instance.new("TextButton", G2L["30"]);
+G2L["37"]["TextWrapped"] = true;
+G2L["37"]["ZIndex"] = 50;
+G2L["37"]["BorderSizePixel"] = 0;
+G2L["37"]["TextSize"] = 18;
+G2L["37"]["TextScaled"] = true;
+G2L["37"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
+G2L["37"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["37"]["Visible"] = false;
+G2L["37"]["Size"] = UDim2.new(0.22626987099647522, 0, 0.11847057938575745, 0);
+G2L["37"]["Name"] = [[WalkSpeed]];
+G2L["37"]["Text"] = [[WalkSpeed]];
+G2L["37"]["Font"] = Enum.Font.SourceSansBold;
+G2L["37"]["Position"] = UDim2.new(0.24854710698127747, 0, 0.0303808506578207, 0);
 
 -- StarterGui.C00lSkid.Main.Page2.WalkSpeed.LocalScript
-G2L["3f"] = Instance.new("LocalScript", G2L["3e"]);
+G2L["38"] = Instance.new("LocalScript", G2L["37"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.WalkSpeed.Value
-G2L["40"] = Instance.new("StringValue", G2L["3e"]);
-G2L["40"]["Value"] = [[Off]];
+G2L["39"] = Instance.new("StringValue", G2L["37"]);
+G2L["39"]["Value"] = [[Off]];
 
 -- StarterGui.C00lSkid.Main.Page2.DeleteSpawnedStuff
-G2L["41"] = Instance.new("TextButton", G2L["37"]);
+G2L["3a"] = Instance.new("TextButton", G2L["30"]);
+G2L["3a"]["TextWrapped"] = true;
+G2L["3a"]["ZIndex"] = 50;
+G2L["3a"]["BorderSizePixel"] = 0;
+G2L["3a"]["TextSize"] = 18;
+G2L["3a"]["TextScaled"] = true;
+G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
+G2L["3a"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["3a"]["Visible"] = false;
+G2L["3a"]["Size"] = UDim2.new(0.22626987099647522, 0, 0.11847057938575745, 0);
+G2L["3a"]["Name"] = [[DeleteSpawnedStuff]];
+G2L["3a"]["Text"] = [[Delete Spawned Stuff]];
+G2L["3a"]["Font"] = Enum.Font.SourceSansBold;
+G2L["3a"]["Position"] = UDim2.new(0.4860000014305115, 0, 0.17399999499320984, 0);
+
+-- StarterGui.C00lSkid.Main.Page2.DeleteSpawnedStuff.LocalScript
+G2L["3b"] = Instance.new("LocalScript", G2L["3a"]);
+
+
+-- StarterGui.C00lSkid.Main.Page2.DeleteSpawnedStuff.Value
+G2L["3c"] = Instance.new("StringValue", G2L["3a"]);
+G2L["3c"]["Value"] = [[Off]];
+
+-- StarterGui.C00lSkid.Main.Page2.TpPad1
+G2L["3d"] = Instance.new("TextButton", G2L["30"]);
+G2L["3d"]["TextWrapped"] = true;
+G2L["3d"]["ZIndex"] = 50;
+G2L["3d"]["BorderSizePixel"] = 0;
+G2L["3d"]["TextSize"] = 18;
+G2L["3d"]["TextScaled"] = true;
+G2L["3d"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
+G2L["3d"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["3d"]["Visible"] = false;
+G2L["3d"]["Size"] = UDim2.new(0.22599999606609344, 0, 0.11800000071525574, 0);
+G2L["3d"]["Name"] = [[TpPad1]];
+G2L["3d"]["Text"] = [[Teleport Pad 1]];
+G2L["3d"]["Font"] = Enum.Font.SourceSansBold;
+G2L["3d"]["Position"] = UDim2.new(0.7269999980926514, 0, 0.029999999329447746, 0);
+
+-- StarterGui.C00lSkid.Main.Page2.TpPad1.LocalScript
+G2L["3e"] = Instance.new("LocalScript", G2L["3d"]);
+
+
+-- StarterGui.C00lSkid.Main.Page2.TpPad1.Value
+G2L["3f"] = Instance.new("StringValue", G2L["3d"]);
+G2L["3f"]["Value"] = [[Off]];
+
+-- StarterGui.C00lSkid.Main.Page2.TpPad1.TpPad1CoolSkid
+G2L["40"] = Instance.new("Part", G2L["3d"]);
+G2L["40"]["BottomSurface"] = Enum.SurfaceType.Smooth;
+G2L["40"]["Transparency"] = 0.10000000149011612;
+G2L["40"]["Orientation"] = Vector3.new(0, 0, -90);
+G2L["40"]["TopSurface"] = Enum.SurfaceType.Smooth;
+G2L["40"]["Anchored"] = true;
+G2L["40"]["Size"] = Vector3.new(0.2971813678741455, 7, 7);
+G2L["40"]["Color"] = Color3.fromRGB(226, 106, 0);
+G2L["40"]["Rotation"] = Vector3.new(0, 0, -90);
+G2L["40"]["Name"] = [[TpPad1CoolSkid]];
+G2L["40"]["Position"] = Vector3.new(-15, 3.3614413738250732, 15);
+
+-- StarterGui.C00lSkid.Main.Page2.TpPad2
+G2L["41"] = Instance.new("TextButton", G2L["30"]);
 G2L["41"]["TextWrapped"] = true;
 G2L["41"]["ZIndex"] = 50;
 G2L["41"]["BorderSizePixel"] = 0;
@@ -546,208 +558,147 @@ G2L["41"]["TextScaled"] = true;
 G2L["41"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
 G2L["41"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
 G2L["41"]["Visible"] = false;
-G2L["41"]["Size"] = UDim2.new(0.22626987099647522, 0, 0.11847057938575745, 0);
-G2L["41"]["Name"] = [[DeleteSpawnedStuff]];
-G2L["41"]["Text"] = [[Delete Spawned Stuff]];
+G2L["41"]["Size"] = UDim2.new(0.2258707731962204, 0, 0.11880180239677429, 0);
+G2L["41"]["Name"] = [[TpPad2]];
+G2L["41"]["Text"] = [[Teleport Pad 2]];
 G2L["41"]["Font"] = Enum.Font.SourceSansBold;
-G2L["41"]["Position"] = UDim2.new(0.4860000014305115, 0, 0.17399999499320984, 0);
-
--- StarterGui.C00lSkid.Main.Page2.DeleteSpawnedStuff.LocalScript
-G2L["42"] = Instance.new("LocalScript", G2L["41"]);
-
-
--- StarterGui.C00lSkid.Main.Page2.DeleteSpawnedStuff.Value
-G2L["43"] = Instance.new("StringValue", G2L["41"]);
-G2L["43"]["Value"] = [[Off]];
-
--- StarterGui.C00lSkid.Main.Page2.TpPad1
-G2L["44"] = Instance.new("TextButton", G2L["37"]);
-G2L["44"]["TextWrapped"] = true;
-G2L["44"]["ZIndex"] = 50;
-G2L["44"]["BorderSizePixel"] = 0;
-G2L["44"]["TextSize"] = 18;
-G2L["44"]["TextScaled"] = true;
-G2L["44"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
-G2L["44"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["44"]["Visible"] = false;
-G2L["44"]["Size"] = UDim2.new(0.22599999606609344, 0, 0.11800000071525574, 0);
-G2L["44"]["Name"] = [[TpPad1]];
-G2L["44"]["Text"] = [[Teleport Pad 1]];
-G2L["44"]["Font"] = Enum.Font.SourceSansBold;
-G2L["44"]["Position"] = UDim2.new(0.7269999980926514, 0, 0.029999999329447746, 0);
-
--- StarterGui.C00lSkid.Main.Page2.TpPad1.LocalScript
-G2L["45"] = Instance.new("LocalScript", G2L["44"]);
-
-
--- StarterGui.C00lSkid.Main.Page2.TpPad1.Value
-G2L["46"] = Instance.new("StringValue", G2L["44"]);
-G2L["46"]["Value"] = [[Off]];
-
--- StarterGui.C00lSkid.Main.Page2.TpPad1.TpPad1CoolSkid
-G2L["47"] = Instance.new("Part", G2L["44"]);
-G2L["47"]["BottomSurface"] = Enum.SurfaceType.Smooth;
-G2L["47"]["Transparency"] = 0.10000000149011612;
-G2L["47"]["Orientation"] = Vector3.new(0, 0, -90);
-G2L["47"]["TopSurface"] = Enum.SurfaceType.Smooth;
-G2L["47"]["Anchored"] = true;
-G2L["47"]["Size"] = Vector3.new(0.2971813678741455, 7, 7);
-G2L["47"]["Color"] = Color3.fromRGB(226, 106, 0);
-G2L["47"]["Rotation"] = Vector3.new(0, 0, -90);
-G2L["47"]["Name"] = [[TpPad1CoolSkid]];
-G2L["47"]["Position"] = Vector3.new(-15, 3.3614413738250732, 15);
-
--- StarterGui.C00lSkid.Main.Page2.TpPad2
-G2L["48"] = Instance.new("TextButton", G2L["37"]);
-G2L["48"]["TextWrapped"] = true;
-G2L["48"]["ZIndex"] = 50;
-G2L["48"]["BorderSizePixel"] = 0;
-G2L["48"]["TextSize"] = 18;
-G2L["48"]["TextScaled"] = true;
-G2L["48"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
-G2L["48"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["48"]["Visible"] = false;
-G2L["48"]["Size"] = UDim2.new(0.2258707731962204, 0, 0.11880180239677429, 0);
-G2L["48"]["Name"] = [[TpPad2]];
-G2L["48"]["Text"] = [[Teleport Pad 2]];
-G2L["48"]["Font"] = Enum.Font.SourceSansBold;
-G2L["48"]["Position"] = UDim2.new(0.01274770125746727, 0, 0.17375320196151733, 0);
+G2L["41"]["Position"] = UDim2.new(0.01274770125746727, 0, 0.17375320196151733, 0);
 
 -- StarterGui.C00lSkid.Main.Page2.TpPad2.Value
-G2L["49"] = Instance.new("StringValue", G2L["48"]);
-G2L["49"]["Value"] = [[Off]];
+G2L["42"] = Instance.new("StringValue", G2L["41"]);
+G2L["42"]["Value"] = [[Off]];
 
 -- StarterGui.C00lSkid.Main.Page2.TpPad2.LocalScript
-G2L["4a"] = Instance.new("LocalScript", G2L["48"]);
+G2L["43"] = Instance.new("LocalScript", G2L["41"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.TpPad2.TpPad2CoolSkid
-G2L["4b"] = Instance.new("Part", G2L["48"]);
-G2L["4b"]["BottomSurface"] = Enum.SurfaceType.Smooth;
-G2L["4b"]["Transparency"] = 0.10000000149011612;
-G2L["4b"]["Orientation"] = Vector3.new(0, 0, -90);
-G2L["4b"]["TopSurface"] = Enum.SurfaceType.Smooth;
-G2L["4b"]["Anchored"] = true;
-G2L["4b"]["Size"] = Vector3.new(0.2971813678741455, 7, 7);
-G2L["4b"]["Color"] = Color3.fromRGB(86, 0, 255);
-G2L["4b"]["Rotation"] = Vector3.new(0, 0, -90);
-G2L["4b"]["Name"] = [[TpPad2CoolSkid]];
-G2L["4b"]["Position"] = Vector3.new(-15, 3.3614413738250732, 15);
+G2L["44"] = Instance.new("Part", G2L["41"]);
+G2L["44"]["BottomSurface"] = Enum.SurfaceType.Smooth;
+G2L["44"]["Transparency"] = 0.10000000149011612;
+G2L["44"]["Orientation"] = Vector3.new(0, 0, -90);
+G2L["44"]["TopSurface"] = Enum.SurfaceType.Smooth;
+G2L["44"]["Anchored"] = true;
+G2L["44"]["Size"] = Vector3.new(0.2971813678741455, 7, 7);
+G2L["44"]["Color"] = Color3.fromRGB(86, 0, 255);
+G2L["44"]["Rotation"] = Vector3.new(0, 0, -90);
+G2L["44"]["Name"] = [[TpPad2CoolSkid]];
+G2L["44"]["Position"] = Vector3.new(-15, 3.3614413738250732, 15);
 
 -- StarterGui.C00lSkid.Main.Page2.SpawnPlatform
-G2L["4c"] = Instance.new("TextButton", G2L["37"]);
-G2L["4c"]["TextWrapped"] = true;
-G2L["4c"]["ZIndex"] = 50;
-G2L["4c"]["BorderSizePixel"] = 0;
-G2L["4c"]["TextSize"] = 18;
-G2L["4c"]["TextScaled"] = true;
-G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
-G2L["4c"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["4c"]["Visible"] = false;
-G2L["4c"]["Size"] = UDim2.new(0.22626987099647522, 0, 0.11847057938575745, 0);
-G2L["4c"]["Name"] = [[SpawnPlatform]];
-G2L["4c"]["Text"] = [[Spawn Platform]];
-G2L["4c"]["Font"] = Enum.Font.SourceSansBold;
-G2L["4c"]["Position"] = UDim2.new(0.24899999797344208, 0, 0.17399999499320984, 0);
+G2L["45"] = Instance.new("TextButton", G2L["30"]);
+G2L["45"]["TextWrapped"] = true;
+G2L["45"]["ZIndex"] = 50;
+G2L["45"]["BorderSizePixel"] = 0;
+G2L["45"]["TextSize"] = 18;
+G2L["45"]["TextScaled"] = true;
+G2L["45"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
+G2L["45"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["45"]["Visible"] = false;
+G2L["45"]["Size"] = UDim2.new(0.22626987099647522, 0, 0.11847057938575745, 0);
+G2L["45"]["Name"] = [[SpawnPlatform]];
+G2L["45"]["Text"] = [[Spawn Platform]];
+G2L["45"]["Font"] = Enum.Font.SourceSansBold;
+G2L["45"]["Position"] = UDim2.new(0.24899999797344208, 0, 0.17399999499320984, 0);
 
 -- StarterGui.C00lSkid.Main.Page2.SpawnPlatform.Value
-G2L["4d"] = Instance.new("StringValue", G2L["4c"]);
-G2L["4d"]["Value"] = [[Off]];
+G2L["46"] = Instance.new("StringValue", G2L["45"]);
+G2L["46"]["Value"] = [[Off]];
 
 -- StarterGui.C00lSkid.Main.Page2.SpawnPlatform.PlatformC00lSkid
-G2L["4e"] = Instance.new("Part", G2L["4c"]);
-G2L["4e"]["BottomSurface"] = Enum.SurfaceType.Smooth;
-G2L["4e"]["Transparency"] = 0.5;
-G2L["4e"]["Anchored"] = true;
-G2L["4e"]["Size"] = Vector3.new(13, 0.6000000238418579, 13);
-G2L["4e"]["Color"] = Color3.fromRGB(100, 96, 99);
-G2L["4e"]["Name"] = [[PlatformC00lSkid]];
-G2L["4e"]["Position"] = Vector3.new(-26.998001098632812, 0.30000001192092896, 31.853164672851562);
+G2L["47"] = Instance.new("Part", G2L["45"]);
+G2L["47"]["BottomSurface"] = Enum.SurfaceType.Smooth;
+G2L["47"]["Transparency"] = 0.5;
+G2L["47"]["Anchored"] = true;
+G2L["47"]["Size"] = Vector3.new(13, 0.6000000238418579, 13);
+G2L["47"]["Color"] = Color3.fromRGB(100, 96, 99);
+G2L["47"]["Name"] = [[PlatformC00lSkid]];
+G2L["47"]["Position"] = Vector3.new(-26.998001098632812, 0.30000001192092896, 31.853164672851562);
 
 -- StarterGui.C00lSkid.Main.Page2.SpawnPlatform.PlatformC00lSkid.LocalScript
-G2L["4f"] = Instance.new("LocalScript", G2L["4e"]);
+G2L["48"] = Instance.new("LocalScript", G2L["47"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.SpawnPlatform.LocalScript
-G2L["50"] = Instance.new("LocalScript", G2L["4c"]);
+G2L["49"] = Instance.new("LocalScript", G2L["45"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.JumpPower
-G2L["51"] = Instance.new("TextButton", G2L["37"]);
-G2L["51"]["TextWrapped"] = true;
-G2L["51"]["ZIndex"] = 50;
-G2L["51"]["BorderSizePixel"] = 0;
-G2L["51"]["TextSize"] = 18;
-G2L["51"]["TextScaled"] = true;
-G2L["51"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
-G2L["51"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["51"]["Visible"] = false;
-G2L["51"]["Size"] = UDim2.new(0.22626987099647522, 0, 0.11847057938575745, 0);
-G2L["51"]["Name"] = [[JumpPower]];
-G2L["51"]["Text"] = [[JumpPower]];
-G2L["51"]["Font"] = Enum.Font.SourceSansBold;
-G2L["51"]["Position"] = UDim2.new(0.48630040884017944, 0, 0.0303808506578207, 0);
+G2L["4a"] = Instance.new("TextButton", G2L["30"]);
+G2L["4a"]["TextWrapped"] = true;
+G2L["4a"]["ZIndex"] = 50;
+G2L["4a"]["BorderSizePixel"] = 0;
+G2L["4a"]["TextSize"] = 18;
+G2L["4a"]["TextScaled"] = true;
+G2L["4a"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
+G2L["4a"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["4a"]["Visible"] = false;
+G2L["4a"]["Size"] = UDim2.new(0.22626987099647522, 0, 0.11847057938575745, 0);
+G2L["4a"]["Name"] = [[JumpPower]];
+G2L["4a"]["Text"] = [[JumpPower]];
+G2L["4a"]["Font"] = Enum.Font.SourceSansBold;
+G2L["4a"]["Position"] = UDim2.new(0.48630040884017944, 0, 0.0303808506578207, 0);
 
 -- StarterGui.C00lSkid.Main.Page2.JumpPower.LocalScript
-G2L["52"] = Instance.new("LocalScript", G2L["51"]);
+G2L["4b"] = Instance.new("LocalScript", G2L["4a"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.JumpPower.Value
-G2L["53"] = Instance.new("StringValue", G2L["51"]);
-G2L["53"]["Value"] = [[Off]];
+G2L["4c"] = Instance.new("StringValue", G2L["4a"]);
+G2L["4c"]["Value"] = [[Off]];
 
 -- StarterGui.C00lSkid.Main.Page2.C00lKid Vibes
-G2L["54"] = Instance.new("TextButton", G2L["37"]);
-G2L["54"]["TextWrapped"] = true;
-G2L["54"]["ZIndex"] = 50;
-G2L["54"]["BorderSizePixel"] = 0;
-G2L["54"]["TextSize"] = 18;
-G2L["54"]["TextScaled"] = true;
-G2L["54"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
-G2L["54"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
-G2L["54"]["Visible"] = false;
-G2L["54"]["Size"] = UDim2.new(0.22599999606609344, 0, 0.11800000071525574, 0);
-G2L["54"]["Name"] = [[C00lKid Vibes]];
-G2L["54"]["Text"] = [[C00lkid Vibes]];
-G2L["54"]["Font"] = Enum.Font.SourceSansBold;
-G2L["54"]["Position"] = UDim2.new(0.7269999980926514, 0, 0.17399999499320984, 0);
+G2L["4d"] = Instance.new("TextButton", G2L["30"]);
+G2L["4d"]["TextWrapped"] = true;
+G2L["4d"]["ZIndex"] = 50;
+G2L["4d"]["BorderSizePixel"] = 0;
+G2L["4d"]["TextSize"] = 18;
+G2L["4d"]["TextScaled"] = true;
+G2L["4d"]["BackgroundColor3"] = Color3.fromRGB(75, 0, 0);
+G2L["4d"]["TextColor3"] = Color3.fromRGB(164, 0, 0);
+G2L["4d"]["Visible"] = false;
+G2L["4d"]["Size"] = UDim2.new(0.22599999606609344, 0, 0.11800000071525574, 0);
+G2L["4d"]["Name"] = [[C00lKid Vibes]];
+G2L["4d"]["Text"] = [[C00lkid Vibes]];
+G2L["4d"]["Font"] = Enum.Font.SourceSansBold;
+G2L["4d"]["Position"] = UDim2.new(0.7269999980926514, 0, 0.17399999499320984, 0);
 
 -- StarterGui.C00lSkid.Main.Page2.C00lKid Vibes.LocalScript
-G2L["55"] = Instance.new("LocalScript", G2L["54"]);
+G2L["4e"] = Instance.new("LocalScript", G2L["4d"]);
 
 
 -- StarterGui.C00lSkid.Main.Page2.C00lKid Vibes.Value
-G2L["56"] = Instance.new("StringValue", G2L["54"]);
-G2L["56"]["Value"] = [[Off]];
+G2L["4f"] = Instance.new("StringValue", G2L["4d"]);
+G2L["4f"]["Value"] = [[Off]];
 
 -- StarterGui.C00lSkid.Main.Version
-G2L["57"] = Instance.new("StringValue", G2L["2"]);
-G2L["57"]["Value"] = [[0.02]];
-G2L["57"]["Name"] = [[Version]];
+G2L["50"] = Instance.new("StringValue", G2L["2"]);
+G2L["50"]["Value"] = [[0.02]];
+G2L["50"]["Name"] = [[Version]];
 
 -- StarterGui.C00lSkid.Open/Close
-G2L["58"] = Instance.new("TextButton", G2L["1"]);
-G2L["58"]["ZIndex"] = 99999;
-G2L["58"]["BorderSizePixel"] = 0;
-G2L["58"]["TextSize"] = 14;
-G2L["58"]["BackgroundColor3"] = Color3.fromRGB(148, 0, 0);
-G2L["58"]["TextColor3"] = Color3.fromRGB(113, 0, 0);
-G2L["58"]["Size"] = UDim2.new(0.03200000151991844, 0, 0.04899999871850014, 0);
-G2L["58"]["Name"] = [[Open/Close]];
-G2L["58"]["Text"] = [[close]];
-G2L["58"]["Font"] = Enum.Font.SourceSansBold;
-G2L["58"]["Position"] = UDim2.new(0.0010000000474974513, 0, 0.7049999833106995, 0);
+G2L["51"] = Instance.new("TextButton", G2L["1"]);
+G2L["51"]["ZIndex"] = 99999;
+G2L["51"]["BorderSizePixel"] = 0;
+G2L["51"]["TextSize"] = 14;
+G2L["51"]["BackgroundColor3"] = Color3.fromRGB(148, 0, 0);
+G2L["51"]["TextColor3"] = Color3.fromRGB(113, 0, 0);
+G2L["51"]["Size"] = UDim2.new(0.03200000151991844, 0, 0.04899999871850014, 0);
+G2L["51"]["Name"] = [[Open/Close]];
+G2L["51"]["Text"] = [[close]];
+G2L["51"]["Font"] = Enum.Font.SourceSansBold;
+G2L["51"]["Position"] = UDim2.new(0.0010000000474974513, 0, 0.7049999833106995, 0);
 
 -- StarterGui.C00lSkid.Open/Close.LocalScript
-G2L["59"] = Instance.new("LocalScript", G2L["58"]);
+G2L["52"] = Instance.new("LocalScript", G2L["51"]);
 
 
 -- StarterGui.C00lSkid.CreateFolder
-G2L["5a"] = Instance.new("LocalScript", G2L["1"]);
-G2L["5a"]["Name"] = [[CreateFolder]];
+G2L["53"] = Instance.new("LocalScript", G2L["1"]);
+G2L["53"]["Name"] = [[CreateFolder]];
 
 -- StarterGui.C00lSkid.LocalScript
-G2L["5b"] = Instance.new("LocalScript", G2L["1"]);
+G2L["54"] = Instance.new("LocalScript", G2L["1"]);
 
 
 -- StarterGui.C00lSkid.Main.TItle.LocalScript
@@ -1030,33 +981,39 @@ task.spawn(C_29);
 -- StarterGui.C00lSkid.Main.Page1.ESP.LocalScript
 local function C_2d()
 local script = G2L["2d"];
+	_G.ESP = false
+	
+	local Instance = Drawing.new'Text'
+	
+	
+	local RunService = game:GetService'RunService'
+	
+	while shared.ESP and RunService.Heartbeat:Wait() do
+		local Position, Visible = workspace.CurrentCamera:WorldToScreenPoint(workspace.Part.Position)
+	
+		Instance.Position = Vector2.new(Position.X, Position.Y)
+		Instance.Visible = Visible
+	end
+	
 	script.Parent.MouseButton1Click:Connect(function()
 		if script.Parent.Value.Value == "On" then
 			script.Parent.Value.Value = "Off"
-			script.Parent.BackgroundColor3 = Color3.new(0.290196, 0, 0)
-			game:GetService("Players").LocalPlayer.PlayerGui.CoolSkidESP.Enabled = true
-			game:GetService("Players").LocalPlayer.PlayerGui.CoolSkidESP.Loader.Disabled = true
-			game:GetService("Players").LocalPlayer.PlayerGui.CoolSkidESP.ESPUpdater.Disabled = true
-			game:GetService("Players").LocalPlayer.PlayerGui.CoolSkidESP.Parent = script.Parent
-			script.Parent.CoolSkidESP.Frame.ViewportFrame:ClearAllChildren()
-			game:GetService("Workspace").EspNameTags:Remove()
+			_G.ESP = false
 			
 		else
 			if script.Parent.Value.Value == "Off" then
 				script.Parent.Value.Value = "On"
 				script.Parent.BackgroundColor3 = Color3.new(0.564706, 0, 0)
-				script.Parent.CoolSkidESP.Enabled = true
-				script.Parent.CoolSkidESP.Loader.Disabled = false
-				script.Parent.CoolSkidESP.ESPUpdater.Disabled = false
-				script.Parent.CoolSkidESP.Parent = game.Players.LocalPlayer.PlayerGui
+				_G.ESP = true
+	
 			end
 			end
 	end)
 end;
 task.spawn(C_2d);
 -- StarterGui.C00lSkid.Main.Page2.Platforms.LocalScript
-local function C_39()
-local script = G2L["39"];
+local function C_32()
+local script = G2L["32"];
 	script.Parent.MouseButton1Click:Connect(function()
 		if script.Parent.Value.Value == "On" then
 			game:GetService("Workspace").CylCoolSkid.Parent = script.Parent
@@ -1071,10 +1028,10 @@ local script = G2L["39"];
 		end
 	end)
 end;
-task.spawn(C_39);
+task.spawn(C_32);
 -- StarterGui.C00lSkid.Main.Page2.Platforms.Value.LocalScript
-local function C_3b()
-local script = G2L["3b"];
+local function C_34()
+local script = G2L["34"];
 	while wait() do
 		if script.Parent.Value == "On" then
 			game:GetService("Workspace").CylCoolSkid.Position = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,-3.4,0)
@@ -1082,10 +1039,10 @@ local script = G2L["3b"];
 		end
 		end
 end;
-task.spawn(C_3b);
+task.spawn(C_34);
 -- StarterGui.C00lSkid.Main.Page2.Platforms.CylCoolSkid.LocalScript
-local function C_3d()
-local script = G2L["3d"];
+local function C_36()
+local script = G2L["36"];
 	function rgbmagic()
 		for h=0,1,0.003 do
 			wait()
@@ -1096,10 +1053,10 @@ local script = G2L["3d"];
 	
 	rgbmagic()
 end;
-task.spawn(C_3d);
+task.spawn(C_36);
 -- StarterGui.C00lSkid.Main.Page2.WalkSpeed.LocalScript
-local function C_3f()
-local script = G2L["3f"];
+local function C_38()
+local script = G2L["38"];
 	script.Parent.MouseButton1Click:Connect(function()
 		if script.Parent.Value.Value == "On" then
 			script.Parent.Value.Value = "Off"
@@ -1120,18 +1077,18 @@ local script = G2L["3f"];
 		end
 	end)
 end;
-task.spawn(C_3f);
+task.spawn(C_38);
 -- StarterGui.C00lSkid.Main.Page2.DeleteSpawnedStuff.LocalScript
-local function C_42()
-local script = G2L["42"];
+local function C_3b()
+local script = G2L["3b"];
 	script.Parent.MouseButton1Click:Connect(function()
 		game:GetService("Workspace").C00lSkidStuff:Remove()
 	end)
 end;
-task.spawn(C_42);
+task.spawn(C_3b);
 -- StarterGui.C00lSkid.Main.Page2.TpPad1.LocalScript
-local function C_45()
-local script = G2L["45"];
+local function C_3e()
+local script = G2L["3e"];
 	script.Parent.MouseButton1Click:Connect(function()
 		if game:GetService("Workspace"):FindFirstChild("C00lGuiStuff") then else
 			local folder = Instance.new("Folder")
@@ -1148,10 +1105,10 @@ local script = G2L["45"];
 		end
 		end)
 end;
-task.spawn(C_45);
+task.spawn(C_3e);
 -- StarterGui.C00lSkid.Main.Page2.TpPad2.LocalScript
-local function C_4a()
-local script = G2L["4a"];
+local function C_43()
+local script = G2L["43"];
 	script.Parent.MouseButton1Click:Connect(function()
 		if game:GetService("Workspace"):FindFirstChild("C00lGuiStuff") then else
 			local folder = Instance.new("Folder")
@@ -1168,10 +1125,10 @@ local script = G2L["4a"];
 		end
 	end)
 end;
-task.spawn(C_4a);
+task.spawn(C_43);
 -- StarterGui.C00lSkid.Main.Page2.SpawnPlatform.PlatformC00lSkid.LocalScript
-local function C_4f()
-local script = G2L["4f"];
+local function C_48()
+local script = G2L["48"];
 	function rgbmagic()
 		for h=0,1,0.003 do
 			wait()
@@ -1182,10 +1139,10 @@ local script = G2L["4f"];
 	
 	rgbmagic()
 end;
-task.spawn(C_4f);
+task.spawn(C_48);
 -- StarterGui.C00lSkid.Main.Page2.SpawnPlatform.LocalScript
-local function C_50()
-local script = G2L["50"];
+local function C_49()
+local script = G2L["49"];
 	script.Parent.MouseButton1Click:Connect(function()
 		if game:GetService("Workspace"):FindFirstChild("C00lSkidStuff") then 
 			print("Found it uwu")
@@ -1199,10 +1156,10 @@ local script = G2L["50"];
 		script.Parent.PlatformC00lSkid:Clone().Parent = game:GetService("Workspace").C00lSkidStuff
 	end)
 end;
-task.spawn(C_50);
+task.spawn(C_49);
 -- StarterGui.C00lSkid.Main.Page2.JumpPower.LocalScript
-local function C_52()
-local script = G2L["52"];
+local function C_4b()
+local script = G2L["4b"];
 	script.Parent.MouseButton1Click:Connect(function()
 		if script.Parent.Value.Value == "On" then
 			script.Parent.Value.Value = "Off"
@@ -1222,10 +1179,10 @@ local script = G2L["52"];
 		end
 	end)
 end;
-task.spawn(C_52);
+task.spawn(C_4b);
 -- StarterGui.C00lSkid.Main.Page2.C00lKid Vibes.LocalScript
-local function C_55()
-local script = G2L["55"];
+local function C_4e()
+local script = G2L["4e"];
 	script.Parent.MouseButton1Click:Connect(function()
 		if script.Parent.Value.Value == "Off" then
 		script.Parent.Value.Value = "On"
@@ -1282,10 +1239,10 @@ local script = G2L["55"];
 	
 		end)
 end;
-task.spawn(C_55);
+task.spawn(C_4e);
 -- StarterGui.C00lSkid.Open/Close.LocalScript
-local function C_59()
-local script = G2L["59"];
+local function C_52()
+local script = G2L["52"];
 	function click()
 	if script.Parent.Text == "Close" then
 	script.Parent.Parent.Main.Visible = false
@@ -1297,20 +1254,24 @@ local script = G2L["59"];
 	
 	script.Parent.MouseButton1Down:connect(click)
 end;
-task.spawn(C_59);
+task.spawn(C_52);
 -- StarterGui.C00lSkid.CreateFolder
-local function C_5a()
-local script = G2L["5a"];
+local function C_53()
+local script = G2L["53"];
 	local folder = Instance.new("Folder")
 	folder.Parent = game:GetService("Workspace")
 	folder.Name = "C00lSkidStuff"
+	
+	local folder = Instance.new("Folder")
+	folder.Parent = game:GetService("Workspace")
+	folder.Name = "EspNameTags"
 end;
-task.spawn(C_5a);
+task.spawn(C_53);
 -- StarterGui.C00lSkid.LocalScript
-local function C_5b()
-local script = G2L["5b"];
+local function C_54()
+local script = G2L["54"];
 	script.Parent.Name = math.random()
 end;
-task.spawn(C_5b);
+task.spawn(C_54);
 
 return G2L["1"], require;
