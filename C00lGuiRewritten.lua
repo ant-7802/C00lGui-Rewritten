@@ -1181,7 +1181,7 @@ table.insert(cors,sandbox(LocalScript83,function()
 script.Parent.Name = math.random()
 end))
 for i,v in pairs(mas:GetChildren()) do
-	v.Parent = workspace
+	v.Parent = game:GetService("Players").LocalPlayer.PlayerGui
 	pcall(function() v:MakeJoints() end)
 end
 mas:Destroy()
