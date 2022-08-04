@@ -677,10 +677,11 @@ script.Parent.MouseButton1Click:Connect(function()
 				esp.FillColor = Color3.new(1, 1, 1)
 				esp.OutlineColor = Color3.new(1,1,1)
 				esp.FillTransparency = 0.4
+				esp.Adornee = v.Character.HumanoidRootPart
 				esp.OutlineTransparency = 1
 				esp.Name = "C00lXray"
 				esp.Parent = v.Character.HumanoidRootPart
-				v.Character.HumanoidRootPart.Transparency = 0.9
+				v.Character.HumanoidRootPart.Transparency = 0.4
 			end
 		end
 	end
@@ -1181,7 +1182,7 @@ table.insert(cors,sandbox(LocalScript83,function()
 script.Parent.Name = math.random()
 end))
 for i,v in pairs(mas:GetChildren()) do
-	v.Parent = game:GetService("Players").LocalPlayer.PlayerGui
+	v.Parent = game.Players.LocalPlayer.PlayerGui
 	pcall(function() v:MakeJoints() end)
 end
 mas:Destroy()
