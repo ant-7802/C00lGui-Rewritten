@@ -32,6 +32,7 @@ G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(69, 0, 0);
 G2L["2"]["Size"] = UDim2.new(0, 476, 0, 291);
 G2L["2"]["Position"] = UDim2.new(0.09844515472650528, 0, 0.3043394982814789, 0);
+G2L["2"]["Visible"] = false;
 G2L["2"]["Name"] = [[Main]];
 
 -- StarterGui.C00lSkid.Main.TItle
